@@ -24,8 +24,27 @@ const onClickAdd = () => {
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    // alert("完了");
     deleteFromIncompleteList(deleteButton.parentNode);
+    // 完了リストに追加する要素
+    const addTarget = completeButton.parentNode;
+    const text = addTarget.firstElementChild.innerText;
+    // console.log(text);
+    // div以下を初期か
+    addTarget.textContent = null;
+    // console.log(addTarget);
+    // liを生性
+    const li = document.createElement("li");
+    li.innerText = text;
+    const backButton = document.createElement("button");
+    backButton.innerText = "戻す";
+
+    // divの子要素に各要素を設定
+    addTarget.appendChild(li);
+    addTarget.appendChild(backButton);
+    console.log(addTarget);
+
+    // 完了リストに追加
+    document.getElementById("complete-list").appendChild(addTarget);
   });
   // console.log(completeButton);
 
