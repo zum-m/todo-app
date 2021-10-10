@@ -17,7 +17,10 @@ const onClickAdd = () => {
 
   // divにliを子要素としてついか
   div.appendChild(li);
-  console.log(div);
+  // console.log(div);
+
+  //生成してきたものを未完了エリアに追加
+  document.getElementById("incomplete-list").appendChild(div);
 };
 
 document
