@@ -1,5 +1,10 @@
 import "./styles.css";
 
+// 未完了リストから指定の要素を削除
+const deleteFromIncompleteList = (target) => {
+  document.getElementById("incomplete-list").removeChild(target);
+};
+
 const onClickAdd = () => {
   // テキストボックスを所得し初期化
   const inputText = document.getElementById("add-text").value;
@@ -15,18 +20,24 @@ const onClickAdd = () => {
   li.innerText = inputText;
   // console.log(li);
 
-  // ボタンタグを生成
+  // 完了ボタンタグを生成
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    // alert("完了");
+    deleteFromIncompleteList(deleteButton.parentNode);
   });
   // console.log(completeButton);
-  // ボタンタグを生成
+
+  // 消去ボタンタグを生成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "消去";
   deleteButton.addEventListener("click", () => {
-    alert("消去");
+    // alert("消去");
+    // 押された削除ボタンの親タグを未完了リストから削除
+    const deleteTarget = deleteButton.parentNode;
+    // console.log(deleteTarget);
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
   });
   // console.log(deleteButton);
 
