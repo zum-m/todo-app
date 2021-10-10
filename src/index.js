@@ -14,6 +14,10 @@ const onClickAdd = () => {
   const li = document.createElement("li");
   li.innerText = inputText;
   // console.log(li);
+
+  // divにliを子要素としてついか
+  div.appendChild(li);
+  console.log(div);
 };
 
 document
