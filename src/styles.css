@@ -59,7 +59,7 @@ li {
   color: #666;
 }
 
-.list-raw {
+.list-row {
   display: flex;
   align-items: center;
   padding-bottom: 4px;
