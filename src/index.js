@@ -1,4 +1,4 @@
-import "./styles.css";
+
 
 // 未完了リストから指定の要素を削除
 const deleteFromIncompleteList = (target) => {
